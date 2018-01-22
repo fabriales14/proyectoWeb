@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Proyecto Final: Turismo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        
+        <style>
+            /* Full-width input fields */
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+
+            /* Set a style for all buttons */
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+            }
+
+            button:hover {
+                opacity: 0.8;
+            }
+
+            /* Extra styles for the cancel button */
+            .cancelbtn {
+                width: auto;
+                padding: 10px 18px;
+                background-color: #f44336;
+            }
+
+            /* Center the image and position the close button */
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+                position: relative;
+            }
+
+            img.avatar {
+                width: 40%;
+                border-radius: 50%;
+            }
+
+            .container {
+                padding: 16px;
+            }
+
+            span.psw {
+                float: right;
+                padding-top: 16px;
+            }
+
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                padding-top: 60px;
+            }
+
+            /* Modal Content/Box */
+            .modal-content {
+                background-color: #fefefe;
+                margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+                border: 1px solid #888;
+                width: 80%; /* Could be more or less, depending on screen size */
+            }
+
+            /* The Close Button (x) */
+            .close {
+                position: absolute;
+                right: 25px;
+                top: 0;
+                color: #000;
+                font-size: 35px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: red;
+                cursor: pointer;
+            }
+
+            /* Add Zoom Animation */
+            .animate {
+                -webkit-animation: animatezoom 0.6s;
+                animation: animatezoom 0.6s
+            }
+
+            @-webkit-keyframes animatezoom {
+                from {-webkit-transform: scale(0)} 
+                to {-webkit-transform: scale(1)}
+            }
+
+            @keyframes animatezoom {
+                from {transform: scale(0)} 
+                to {transform: scale(1)}
+            }
+
+            /* Change styles for span and cancel button on extra small screens */
+            @media screen and (max-width: 300px) {
+                span.psw {
+                   display: block;
+                   float: none;
+                }
+                .cancelbtn {
+                   width: 100%;
+                }
+            }
+            
+            .btn {
+                border: none;
+                color: white;
+                padding: 14px 28px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .success {background-color: #4CAF50;} /* Green */
+            .success:hover {background-color: #46a049;}
+
+            .info {background-color: #2196F3;} /* Blue */
+            .info:hover {background: #0b7dda;}
+
+            .warning {background-color: #ff9800;} /* Orange */
+            .warning:hover {background: #e68a00;}
+
+            .danger {background-color: #f44336;} /* Red */ 
+            .danger:hover {background: #da190b;}
+
+            .default {background-color: #e7e7e7; color: black;} /* Gray */ 
+            .default:hover {background: #ddd;}
+        </style>   
+    </head>
+    
+    
+    <body class="w3-pale-green">
+        
+        <div class="w3-sidebar w3-light-grey w3-card-4 w3-animate-left" style="width: 180px; display: block;" id="mySidebar">
+          <div class="w3-bar w3-dark-grey">
+          <span class="w3-bar-item">Contenido</span>
+          <button onclick="w3_close()" class="w3-bar-item w3-button w3-hide-large w3-right" title="close Sidebar">×</button>
+          </div>
+          <div class="w3-bar-block">
+          <a class="w3-bar-item w3-button w3-green" href="index.HTML">Inicio</a>
+          <a class="w3-bar-item w3-button" href="Cliente.html">Excursiones</a>
+          <a class="w3-bar-item w3-button" href="Reservaciones.HTML">Reservaciones</a>
+          <a class="w3-bar-item w3-button" href="AcercaDe.HTML">Acerca de</a>
+          <a class="w3-bar-item w3-button" href="Contactenos.HTML">Contáctenos</a>
+          <div class="w3-dropdown-hover">            
+          <a class="w3-bar-item w3-button" href="Login.HTML">Administración</a>
+          </div>
+        </div>
+        </div>
+
+        <div id="main">
+
+
+        <div class="w3-teal w3-bar w3-left">
+          <button id="openNav" class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">&#9776;</button>
+            <button class="w3-teal w3-xlarge w3-bar-item">Excursiones</button>
+        </div>
+            
+        <div class="w3-white">
+            <br><br><br>
+        </div>
+        
+            
+        <div class="w3-content w3-display-container">
+            <div>
+                <div >
+                  <form class="modal-content animate" action="/action_page.php">
+                    <div class="imgcontainer">
+                      <img src="Imgs/Check.png" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                      <label><b>Username</b></label>
+                      <input type="text" placeholder="Enter Username" name="uname" required>
+
+                      <label><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+
+                      <a class="btn success" type="submit" href="Admin.HTML">Login</a>
+                      <label>
+                        <input type="checkbox" checked="checked"> Remember me
+                      </label>
+                    </div>
+
+                      <span class="psw">Forgot <a href="#">password?</a></span>
+                  </form>
+                </div>
+
+                
+                
+                
+            </div>
+        </div>
+            <br><br><br><br><br><br><br><br><br><br>
+
+        </div>
+
+        <script>
+        w3_close();
+        function w3_open() {
+          document.getElementById("main").style.marginLeft = "25%";
+          document.getElementById("mySidebar").style.width = "25%";
+          document.getElementById("mySidebar").style.display = "block";
+          document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+          document.getElementById("main").style.marginLeft = "0%";
+          document.getElementById("mySidebar").style.display = "none";
+          document.getElementById("openNav").style.display = "inline-block";
+        }
+        </script> 
+    </body>
+</html>
+
+<!-- AIzaSyC0yQgCS1fBCblqFwLDqCut1CghPiSUYVo -->

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Proyecto Final: Turismo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      
+    </head>
+    
+    
+    <body class="w3-pale-green">
+        
+        <div class="w3-sidebar w3-light-grey w3-card-4 w3-animate-left" style="width: 180px; display: block;" id="mySidebar">
+          <div class="w3-bar w3-dark-grey">
+          <span class="w3-bar-item w3-padding-16">Contenido</span>
+          <button onclick="w3_close()" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-16" title="close Sidebar">×</button>
+          </div>
+          <div class="w3-bar-block">
+          <a class="w3-bar-item w3-button w3-green" href="index.HTML">Inicio</a>
+          <a class="w3-bar-item w3-button" href="Cliente.html">Excursiones</a>
+          <a class="w3-bar-item w3-button" href="Reservaciones.HTML">Reservaciones</a>
+          <a class="w3-bar-item w3-button" href="AcercaDe.HTML">Acerca de</a>
+          <a class="w3-bar-item w3-button" href="Contactenos.HTML">Contáctenos</a>
+          <div class="w3-dropdown-hover">            
+          <a class="w3-bar-item w3-button" href="Login.HTML">Administración</a>
+          </div>
+        </div>
+        </div>
+
+        <div id="main">
+
+
+        <div class="w3-teal w3-bar w3-left">
+          <button id="openNav" class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">&#9776;</button>
+            <button class="w3-teal w3-xlarge w3-bar-item">Excursiones</button>
+        </div>
+        <br>
+        <div class=" w3-container row" style="width:90%">
+            <div class="w3-container w3-margin" id="contact">
+            <h3 class="w3-border-bottom w3-border-light-grey">Contáctenos</h3>
+            <p>Por favor, introduzca el código de reservacion, sus datos personales y cualquier dato adicional para realizar su consulta</p>
+            <form action="/action_page.php" target="_blank">
+              <input class="w3-input" type="text" placeholder="Código reservación" required name="Code">
+              <input class="w3-input w3-section" type="text" placeholder="Nombre" required name="Name">
+              <input class="w3-input w3-section" type="text" placeholder="Email" required name="Email">
+              <input class="w3-input w3-section" type="text" placeholder="Asunto" required name="Subject">
+              <input class="w3-input w3-section" type="text" placeholder="Mensaje" required name="Comment">
+              <input class="w3-input w3-section" type="file" placeholder="Dato adjunto" required name="Data">
+              <button class="w3-button w3-teal w3-section" type="submit">
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+        </div>
+
+        
+
+
+
+
+
+
+        <script>
+        w3_close();
+        function w3_open() {
+          document.getElementById("main").style.marginLeft = "25%";
+          document.getElementById("mySidebar").style.width = "25%";
+          document.getElementById("mySidebar").style.display = "block";
+          document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+          document.getElementById("main").style.marginLeft = "0%";
+          document.getElementById("mySidebar").style.display = "none";
+          document.getElementById("openNav").style.display = "inline-block";
+        }
+        </script> 
+    </body>
+</html>
+
+<!-- AIzaSyC0yQgCS1fBCblqFwLDqCut1CghPiSUYVo -->

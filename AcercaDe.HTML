@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Proyecto Final: Turismo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    
+    
+    <body class="w3-pale-green">
+        
+        <div class="w3-sidebar w3-light-grey w3-card-4 w3-animate-left" style="width: 180px; display: block;" id="mySidebar">
+          <div class="w3-bar w3-dark-grey">
+          <span class="w3-bar-item w3-padding-16">Contenido</span>
+          <button onclick="w3_close()" class="w3-bar-item w3-button w3-hide-large w3-right w3-padding-16" title="close Sidebar">×</button>
+          </div>
+          <div class="w3-bar-block">
+          <a class="w3-bar-item w3-button w3-green" href="index.HTML">Inicio</a>
+          <a class="w3-bar-item w3-button" href="Cliente.html">Excursiones</a>
+          <a class="w3-bar-item w3-button" href="Reservaciones.HTML">Reservaciones</a>
+          <a class="w3-bar-item w3-button" href="AcercaDe.HTML">Acerca de</a>
+          <a class="w3-bar-item w3-button" href="Contactenos.HTML">Contáctenos</a>
+          <div class="w3-dropdown-hover">            
+          <a class="w3-bar-item w3-button" href="Login.HTML">Administración</a>
+          </div>
+        </div>
+        </div>
+
+        <div id="main">
+
+
+        <div class="w3-teal w3-bar w3-left">
+          <button id="openNav" class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">&#9776;</button>
+            <button class="w3-teal w3-xlarge w3-bar-item" style="">Excursiones</button>
+        </div>
+            
+        <div class="w3-white">
+            <br><br><br>
+        </div>
+        
+            
+        <div class="w3-content w3-display-container w3-card-4 w3-margin-botton">
+            <div class="w3-header w3-white">
+                <h1 class="w3-margin">Acerca de</h1>
+            </div>
+            <p class="w3-center">
+                Instituto Tecnológico de Costa Rica<br> 
+                Escuela de Ingeniería en Computación<br>
+                Introducción al Desarrollo de Aplicaciones Web<br>
+                Proyecto Final de Curso<br><br>
+
+                Tema:<br>
+                Aplicación de Excursiones<br><br>
+                
+                Profesora:<br>
+                Mcs. Ericka Solano Fernández<br><br>
+
+                Estudiantes:<br>
+                Alvarado Esquivel Fabricio<br>
+                Hernández Sibaja Bryan<br>
+                Rodríguez Guido Allan<br><br>
+
+                Cartago; Verano 2017 - 2018<br>
+            </p>
+        </div>
+        <div class="w3-content w3-display-container">
+            <h3> Ubicación </h3>
+            <div id="googleMap" class="w3-container w3-card w3-center w3-margin-left" style="width:90%;height:400px;"></div>
+
+            <script>
+            function myMap() {
+            var mapProp= {
+                center:new google.maps.LatLng(9.855602, -83.910699),
+                zoom:17,
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            }
+            </script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYKZW59nnUaoCtqhQCxVb-PrdizztIkR0&callback=myMap"></script>
+            <!--
+            To use this code on your website, get a free API key from Google.
+            Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+            -->
+
+        </div>
+        <div class="w3-panel">
+           <h4>Síganos en las Distintas Redes Sociales</h4>
+            <div class="w3-bar">
+                            <a href="http://twitter.com/" target="_blank">
+                                <img border="0" src="icons/tw.png" width="25" height="25">   
+                            </a>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img border="0" src="icons/fa.png" width="25" height="25">
+                            </a>
+                            <a href="https://plus.google.com/" target="_blank">
+                                <img border="0" src="icons/g+.png" width="25" height="25">
+                            </a>
+                    </div>
+        </div>            
+
+        <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+        </script>
+
+
+
+        </div>
+
+        <script>
+        w3_close();
+        function w3_open() {
+          document.getElementById("main").style.marginLeft = "25%";
+          document.getElementById("mySidebar").style.width = "25%";
+          document.getElementById("mySidebar").style.display = "block";
+          document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+          document.getElementById("main").style.marginLeft = "0%";
+          document.getElementById("mySidebar").style.display = "none";
+          document.getElementById("openNav").style.display = "inline-block";
+        }
+        </script> 
+    </body>
+</html>
+
+<!-- AIzaSyAYKZW59nnUaoCtqhQCxVb-PrdizztIkR0 -->
