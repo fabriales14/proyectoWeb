@@ -390,12 +390,54 @@ and open the template in the editor.
                             <th>Hora de salida</th>
                             <th>Precios</th>
                             <th>Refrigerio</th>
+                            <th>Cupos</th>
                             <th>Desayuno</th>
                             <th>Almuerzo</th>
                             <th><a class="w3-button w3-teal" style="border-radius: 20px" onclick="document.getElementById('form-excursion').style.display='block'"><i class="fa fa-plus-circle" style="font-size:25px"></i></a></th>
                           </tr>
                         </thead>
                       </table>
+                      <div id="form-buses" class="w3-modal">
+                        <table class="w3-table-all w3-content w3-display-container w3-section" style="width: 95%">
+                        <thead>
+                          <tr class="w3-green">
+                            <th>Identificación</th>
+                            <th>Placa</th>
+                            <th>Chofer</th>
+                            <th>Guía</th>
+                            <th>Capacidad</th>
+                            <th>Estado</th>
+                            <th><a class="w3-button w3-teal" style="border-radius: 20px" onclick=""><i class="fa fa-plus-circle" style="font-size:25px"></i></a></th>
+                          </tr>
+                        </thead>
+                      </table>
+                        <div class="w3-modal-content w3-animate-top w3-card-4">
+                          <header class="w3-container w3-teal"> 
+                            <span onclick="document.getElementById('form-buses').style.display='none'" 
+                            class="w3-button w3-display-topright">&times;</span>
+                            <h2>Agregar bus</h2>
+                          </header>
+                          <div class="w3-container">
+                            <form action="/action_page.php" target="_blank">
+                              <select id="bus" class="w3-select" name="option">
+                              </select>
+                              <input id="fecha" class="w3-input" type="date" placeholder="Fecha" required name="Date">
+                              <input id="salida" class="w3-input" type="text" placeholder="Lugar de salida" required name="Salida">
+                              <input id="hora" class="w3-input" type="time" placeholder="Nombre destino" required name="Hora">
+                              <input id="precioN" class="w3-input" type="number" min="0" placeholder="Precio niño" required name="priceN">
+                              <input id="precioA" class="w3-input" type="number" min="0" placeholder="Precio adulto" required name="priceA">
+                              <input id="precioT" class="w3-input" type="number" min="0" placeholder="Precio adulto mayor" required name="pricT">
+                              <input id="desayuno" class="w3-check" type="checkbox">
+                              <label>Desayuno</label>
+                              <input id="almuerzo" class="w3-check" type="checkbox">
+                              <label>Almuerzo</label>
+                              <input id="refrigerio" class="w3-check" type="checkbox">
+                              <label>Refrigerio</label>
+                              <button class="w3-button w3-teal w3-section" type="submit">Agregar</button>
+                            </form>
+                          </div>
+                        </div>
+                       </div>
                       <div id="form-excursion" class="w3-modal">
                         <div class="w3-modal-content w3-animate-top w3-card-4">
                           <header class="w3-container w3-teal"> 
