@@ -11,6 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -203,8 +204,7 @@ and open the template in the editor.
                     </table>
                     
                     <div id="asociados" class="collapse">
-                        <br>
-                        <table class="w3-table-all w3-content w3-display-container" style="width: 95%">
+                        <table class="w3-table-all w3-content w3-display-container w3-section" style="width: 95%">
                         <thead>
                           <tr class="w3-green">
                             <th>Identificación</th>
@@ -212,90 +212,170 @@ and open the template in the editor.
                             <th>Teléfono</th>
                             <th>Email</th>
                             <th>Asignación</th>
-                            <th></th>
+                            <th><a class="w3-button w3-teal" style="border-radius: 20px" onclick="document.getElementById('form-asoc').style.display='block'"><i class="fa fa-plus-circle" style="font-size:25px"></i></a></th>
                           </tr>
                         </thead>
-                        <tr>
-                          <td>0001</td>
-                          <td>Antonio Blanco</td>
-                          <td>89799089</td>
-                          <td>antb@gmail.com</td>
-                          <td>Chofer</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
-                        <tr>
-                          <td>0002</td>
-                          <td>Elena Mora</td>
-                          <td>87743189</td>
-                          <td>elenam@gmail.com</td>
-                          <td>Guia</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
-                        <tr>
-                          <td>0003</td>
-                          <td>Marco Carvajal</td>
-                          <td>77743989</td>
-                          <td>carvmarco@gmail.com</td>
-                          <td>Chofer</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
                       </table>
+                      <div id="asoc-edit" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-top w3-card-4">
+                          <header class="w3-container w3-teal"> 
+                            <span onclick="document.getElementById('asoc-edit').style.display='none'" 
+                            class="w3-button w3-display-topright">&times;</span>
+                            <h2>Editar asociado</h2>
+                          </header>
+                          <div class="w3-container">
+                            <form action="/action_page.php" target="_blank">
+                              <input id="name" class="w3-input" type="text" placeholder="Nombre completo" required name="Name">
+                              <input id="phone" class="w3-input w3-section" type="text" placeholder="Teléfono" required name="Phone">
+                              <input id="email" class="w3-input w3-section" type="text" placeholder="Email" required name="Email">
+                              <select id="ocup" class="w3-select" name="option">
+                                  <option value="1">Chofer</option>
+                                  <option value="2">Guía</option>
+                              </select>
+                              <button class="w3-button w3-teal w3-section" type="submit">Editar</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="form-asoc" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-top w3-card-4">
+                          <header class="w3-container w3-teal"> 
+                            <span onclick="document.getElementById('form-asoc').style.display='none'" 
+                            class="w3-button w3-display-topright">&times;</span>
+                            <h2>Agregar asociado</h2>
+                          </header>
+                          <div class="w3-container">
+                            <form action="/action_page.php" target="_blank">
+                              <input id="name" class="w3-input" type="text" placeholder="Nombre completo" required name="Name">
+                              <input id="phone" class="w3-input w3-section" type="text" placeholder="Teléfono" required name="Phone">
+                              <input id="email" class="w3-input w3-section" type="text" placeholder="Email" required name="Email">
+                              <select id="ocup" class="w3-select" name="option">
+                                  <option value="1">Chofer</option>
+                                  <option value="2">Guía</option>
+                              </select>
+                              <button class="w3-button w3-teal w3-section" type="submit">Agregar</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
                     <div id="portada" class="collapse">
-                        <br>
-                      <table class="w3-table-all w3-content w3-display-container" style="width: 95%">
+                      <table class="w3-table-all w3-content w3-display-container w3-section" style="width: 95%">
                         <thead>
                           <tr class="w3-green">
-                            <th>Código</th>
-                            <th>Descripción de Flotilla</th>
-                            <th>Editar</th>
+                            <th>Identificación</th>
+                            <th>Placa</th>
+                            <th>Chofer</th>
+                            <th>Guía</th>
+                            <th>Capacidad</th>
+                            <th>Estado</th>
+                            <th><a class="w3-button w3-teal" style="border-radius: 20px" onclick="document.getElementById('form-flotilla').style.display='block'"><i class="fa fa-plus-circle" style="font-size:25px"></i></a></th>
                           </tr>
                         </thead>
-                        <tr>
-                          <td>0001</td>
-                          <td>Autobús urbano Mercedes Benz, baño, con capacidad de 53 personas.</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
-                        <tr>
-                          <td>0002</td>
-                          <td>Microbús Indcar, con capacidad de 20 personas</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
-                        <tr>
-                          <td>0003</td>
-                          <td>Autobús pequeño (carrocerías Beulas), con capacidad de 25 personas.</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
                       </table>
+                      <div id="form-flotilla" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-top w3-card-4">
+                          <header class="w3-container w3-teal"> 
+                            <span onclick="document.getElementById('form-flotilla').style.display='none'" 
+                            class="w3-button w3-display-topright">&times;</span>
+                            <h2>Agregar a flotilla</h2>
+                          </header>
+                          <div class="w3-container">
+                            <form action="/action_page.php" target="_blank">
+                              <input id="placa" class="w3-input" type="text" placeholder="N. placa" required name="Placa">
+                              <select name="Chofer" class="w3-select" id="chofer"></select>
+                              <select name="Guia" class="w3-select" id="guia"></select>
+                              <input id="cap" class="w3-input w3-section" type="number" min="1" max="100" placeholder="Capacidad" required name="Capacidad">
+                              <select id="estado" class="w3-select" name="option">
+                                  <option value="1">Bueno</option>
+                                  <option value="2">Malo</option>
+                              </select>
+                              <button class="w3-button w3-teal w3-section" type="submit">Agregar</button>
+                            </form>
+                          </div>
+                        </div>
+                       </div>
+                       <div id="edit-flotilla" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-top w3-card-4">
+                          <header class="w3-container w3-teal"> 
+                            <span onclick="document.getElementById('edit-flotilla').style.display='none'" 
+                            class="w3-button w3-display-topright">&times;</span>
+                            <h2>Editar bus</h2>
+                          </header>
+                          <div class="w3-container">
+                            <form action="/action_page.php" target="_blank">
+                              <input id="placa" class="w3-input" type="text" placeholder="N. placa" required name="Placa">
+                              <select name="Chofer" id="chofer"></select>
+                              <select name="Guia" id="guia"></select>
+                              <input id="cap" class="w3-input w3-section" type="number" min="1" max="100" placeholder="Capacidad" required name="Capacidad">
+                              <select id="estado" class="w3-select" name="option">
+                                  <option value="1">Bueno</option>
+                                  <option value="2">Malo</option>
+                              </select>
+                              <button class="w3-button w3-teal w3-section" type="submit">Editar</button>
+                            </form>
+                          </div>
+                        </div>
+                       </div>
                     </div>
 
                     <div id="conversor" class="collapse">
                         <br>
-                        <table class="w3-table-all w3-content w3-display-container" style="width: 95%">
+                        <table class="w3-table-all w3-content w3-display-container w3-section" style="width: 95%">
                         <thead>
                           <tr class="w3-green">
-                            <th>Código</th>
-                            <th>Sitio</th>
-                            <th>Editar</th>
+                            <th>Identificación</th>
+                            <th>Nombre</th>
+                            <th>Tipo Destino</th>
+                            <th><a class="w3-button w3-teal" style="border-radius: 20px" onclick="document.getElementById('form-destino').style.display='block'"><i class="fa fa-plus-circle" style="font-size:25px"></i></a></th>
                           </tr>
                         </thead>
-                        <tr>
-                          <td>0001</td>
-                          <td>Hyatt Place, Managua, Nicaragua.</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
-                        <tr>
-                          <td>0002</td>
-                          <td>Hotel Villa del Sueño, Puntarenas.</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
-                        <tr>
-                          <td>0003</td>
-                          <td>Bed & Breakfast Hotel El Encanto.</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
                       </table>
+                      <div id="form-destino" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-top w3-card-4">
+                          <header class="w3-container w3-teal"> 
+                            <span onclick="document.getElementById('form-destino').style.display='none'" 
+                            class="w3-button w3-display-topright">&times;</span>
+                            <h2>Agregar destino</h2>
+                          </header>
+                          <div class="w3-container">
+                            <form action="/action_page.php" target="_blank">
+                              <input id="nombre" class="w3-input" type="text" placeholder="Nombre destino" required name="name">
+                              <select id="tipo" class="w3-select" name="option">
+                                  <option value="1">Sol y playa</option>
+                                  <option value="2">Cultural</option>
+                                  <option value="3">Negocios</option>
+                                  <option value="4">Activo</option>
+                              </select>
+                              <input class="w3-input" type="file" id="file" name="file" multiple>
+                              <button class="w3-button w3-teal w3-section" type="submit">Agregar</button>
+                            </form>
+                          </div>
+                        </div>
+                       </div>
+                       <div id="edit-destino" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-top w3-card-4">
+                          <header class="w3-container w3-teal"> 
+                            <span onclick="document.getElementById('edit-destino').style.display='none'" 
+                            class="w3-button w3-display-topright">&times;</span>
+                            <h2>Editar destino</h2>
+                          </header>
+                          <div class="w3-container">
+                            <form action="/action_page.php" target="_blank">
+                              <input id="nombre" class="w3-input" type="text" placeholder="Nombre destino" required name="name">
+                              <select id="tipo" class="w3-select" name="option">
+                                  <option value="1">Sol y playa</option>
+                                  <option value="2">Cultural</option>
+                                  <option value="3">Negocios</option>
+                                  <option value="4">Activo</option>
+                              </select>
+                              <input class="w3-input" type="file" id="file" name="file" multiple>
+                              <button class="w3-button w3-teal w3-section" type="submit">Editar</button>
+                            </form>
+                          </div>
+                        </div>
+                       </div>
                     </div>
 
                     <div id="monedas" class="collapse">
@@ -303,28 +383,71 @@ and open the template in the editor.
                         <table class="w3-table-all w3-content w3-display-container" style="width: 95%">
                         <thead>
                           <tr class="w3-green">
-                            <th>Código</th>
-                            <th>Descripción de Excursión</th>
-                            <th>Editar</th>
+                            <th>Identificación</th>
+                            <th>Destino</th>
+                            <th>Fecha</th>
+                            <th>Lugar de salida</th>
+                            <th>Hora de salida</th>
+                            <th>Precios</th>
+                            <th>Refrigerio</th>
+                            <th>Desayuno</th>
+                            <th>Almuerzo</th>
+                            <th><a class="w3-button w3-teal" style="border-radius: 20px" onclick="document.getElementById('form-excursion').style.display='block'"><i class="fa fa-plus-circle" style="font-size:25px"></i></a></th>
                           </tr>
                         </thead>
-                        <tr>
-                          <td>0001</td>
-                          <td>Viaje a Managua, Nicaragua. 5 días y 2 noches todo incluído. Paradas en el Lago de Nicaragua y Rivas. </td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
-                        <tr>
-                          <td>0002</td>
-                          <td>Viaje a Playa Hermosa, Puntarenas. Viaje de un solo día.</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
-                        <tr>
-                          <td>0003</td>
-                          <td>Carnavales de Limón. Dos días, una noche. Incluye tour por zonas turísticas de la Región.</td>
-                          <td><a class="w3-button w3-teal">Editar</a></td>
-                        </tr>
                       </table>
+                      <div id="form-excursion" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-top w3-card-4">
+                          <header class="w3-container w3-teal"> 
+                            <span onclick="document.getElementById('form-excursion').style.display='none'" 
+                            class="w3-button w3-display-topright">&times;</span>
+                            <h2>Agregar excursión</h2>
+                          </header>
+                          <div class="w3-container">
+                            <form action="/action_page.php" target="_blank">
+                              <select id="lugar" class="w3-select" name="option">
+                              </select>
+                              <input id="fecha" class="w3-input" type="date" placeholder="Fecha" required name="Date">
+                              <input id="salida" class="w3-input" type="text" placeholder="Lugar de salida" required name="Salida">
+                              <input id="hora" class="w3-input" type="time" placeholder="Nombre destino" required name="Hora">
+                              <input id="precioN" class="w3-input" type="number" min="0" placeholder="Precio niño" required name="priceN">
+                              <input id="precioA" class="w3-input" type="number" min="0" placeholder="Precio adulto" required name="priceA">
+                              <input id="precioT" class="w3-input" type="number" min="0" placeholder="Precio adulto mayor" required name="pricT">
+                              <input id="desayuno" class="w3-check" type="checkbox">
+                              <label>Desayuno</label>
+                              <input id="almuerzo" class="w3-check" type="checkbox">
+                              <label>Almuerzo</label>
+                              <input id="refrigerio" class="w3-check" type="checkbox">
+                              <label>Refrigerio</label>
+                              <button class="w3-button w3-teal w3-section" type="submit">Agregar</button>
+                            </form>
+                          </div>
+                        </div>
+                       </div>
+                       <div id="edit-destino" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-top w3-card-4">
+                          <header class="w3-container w3-teal"> 
+                            <span onclick="document.getElementById('edit-destino').style.display='none'" 
+                            class="w3-button w3-display-topright">&times;</span>
+                            <h2>Editar destino</h2>
+                          </header>
+                          <div class="w3-container">
+                            <form action="/action_page.php" target="_blank">
+                              <input id="nombre" class="w3-input" type="text" placeholder="Nombre destino" required name="name">
+                              <select id="tipo" class="w3-select" name="option">
+                                  <option value="1">Sol y playa</option>
+                                  <option value="2">Cultural</option>
+                                  <option value="3">Negocios</option>
+                                  <option value="4">Activo</option>
+                              </select>
+                              <input class="w3-input" type="file" id="file" name="file" multiple>
+                              <button class="w3-button w3-teal w3-section" type="submit">Editar</button>
+                            </form>
+                          </div>
+                        </div>
+                       </div>
                     </div>
+                    
                     <div id="ultimo" class="collapse">
                         ACA SE GERERA EL REPORTE
                     </div>
